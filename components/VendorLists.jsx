@@ -3,9 +3,8 @@ import { HiPencilAlt } from "react-icons/hi"
 import Remove from "./Remove"
 
 const getTopics = async () => {
- 
-    const apiUrl = process.env.API_URL;
-    console.log("apiUrl:", apiUrl);
+    const apiUrl = process.env.URL;
+
     try {
         const res = await fetch(`http://localhost:3000/database/topic`, {
         cache: "no-store",
@@ -31,12 +30,12 @@ export default async function VendorLists(){
                 <div>
                     <h2 className="font-bold text-2xl">{v.name}</h2>
                     <div className="text-gray-500">
-                    <p>{v.bank}</p>
-                    <p>{v.account}</p>
-                    <p>{v.address1}{v.address2}</p>
-                    <p>{v.city}</p>
-                    <p>{v.country}</p>
-                    <p>{v.zip}</p>
+                      <p>{v.bank}</p>
+                      <p>{v.account}</p>
+                      <p>{v.address1}{v.address2}</p>
+                      <p>{v.city}</p>
+                      <p>{v.country}</p>
+                      <p>{v.zip}</p>
 
                     </div>
                 </div>

@@ -2,6 +2,8 @@ import EditVendor from "@/components/EditVendor"
 
 const getTopicById =  async(id)=>{
   const apiUrl = process.env.API_URL;
+
+ 
   try {
     const res = await fetch(`${apiUrl}/database/topic/${id}`,{
       cache: "no-store",

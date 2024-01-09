@@ -18,6 +18,12 @@ export default function EditVendor({id, name, bank, account, address1, address2,
   const haldleSubmit = async(e)=>{
     e.preventDefault();
 
+    if (
+      !newName || !newBank || !newAccount || !newAddress1 || !newAddress2 || !newCity || !newCountry || !newZip) {
+      alert("All fields are required!");
+      return;
+    }
+
     try {
       const res= await fetch(`/database/topic/${id}`,{
         method:"PUT",
